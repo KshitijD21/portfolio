@@ -21,8 +21,8 @@ Based on the current `package.json`, the project uses:
 ### Styling & UI
 
 - **Tailwind CSS v4** (Latest version with new features)
-- **shadcn/ui** (Modern component library - to be integrated)
-- **Magic UI** (Advanced animated components - to be integrated)
+- **shadcn/ui** (Modern component library)
+- **Magic UI** (Advanced animated components)
 
 ### Development Tools
 
@@ -89,11 +89,15 @@ Based on the `.vscode/mcp.json` configuration, you have access to these powerful
 
 ### 6. **Playwright MCP** (`@playwright/mcp`)
 
-- **Purpose**: Testing and quality assurance
+- **Purpose**: Comprehensive automated testing and quality assurance
 - **Usage**:
-  - Generate end-to-end tests
-  - Test responsive design
-  - Validate accessibility features
+  - Test responsive design across multiple viewport sizes
+  - Validate accessibility features and contrast ratios
+  - **Test both light and dark mode themes**
+  - **Take screenshots for visual validation**
+  - **Never install Playwright locally** - use MCP only
+  - **Create testing plans** for each development iteration
+  - **Performance testing** with Core Web Vitals measurement
 
 ## Development Workflow
 
@@ -131,6 +135,33 @@ Before implementing, check:
 - Apply **shadcn/ui** for core components
 - Enhance with **Magic UI** for animations
 - Ensure **Tailwind CSS v4** best practices
+
+### Step 5: Automated Testing (Playwright MCP)
+
+After every implementation iteration:
+
+1. **Create Testing Plan**:
+
+   - Define specific test scenarios for the implemented feature
+   - Plan responsive testing across different viewport sizes
+   - Outline accessibility and contrast checks
+
+2. **Execute Playwright Tests**:
+
+   - Use **Playwright MCP only** - never install locally or via npm test - Validate responsive design on mobile, tablet, and desktop viewports
+   - Test both light and dark mode themes
+
+3. **Visual Testing**:
+
+   - Take screenshots in both light and dark modes
+   - Check color contrast ratios for accessibility compliance
+   - Verify component layouts at different screen sizes
+   - Capture before/after comparisons for design changes
+
+4. **Performance Testing**:
+   - Measure Core Web Vitals during tests
+   - Verify loading performance across different network conditions
+   - Test image optimization and lazy loading behavior
 
 ## Best Practices to Follow
 
@@ -174,17 +205,29 @@ Before implementing, check:
 - Ensure **accessibility** (WCAG guidelines)
 - Optimize for **Core Web Vitals**
 
+### Testing & Quality Assurance (Playwright MCP)
+
+- **Always use Playwright MCP** - never install locally or via npm test
+- **Test after every iteration** with a comprehensive plan
+- **Responsive Testing**:
+  - Mobile (320px, 375px, 414px)
+  - Tablet (768px, 1024px)
+  - Desktop (1280px, 1440px, 1920px)
+- **Theme Testing**:
+  - Test both light and dark modes
+  - Take screenshots for visual comparison
+  - Verify contrast ratios meet WCAG AA standards
+- **Performance Testing**:
+  - Core Web Vitals measurement
+  - Loading time analysis
+  - Image optimization validation
+- **Accessibility Testing**:
+  - Keyboard navigation
+  - Screen reader compatibility
+  - Color contrast validation
+  - Focus management
+
 ## Portfolio-Specific Guidance
-
-### Essential Sections to Consider
-
-1. **Hero Section** - Eye-catching introduction with animations
-2. **About** - Personal story and skills showcase
-3. **Projects** - Interactive project gallery
-4. **Experience** - Timeline or card-based layout
-5. **Skills** - Visual representation of technical abilities
-6. **Contact** - Interactive contact form
-7. **Blog** (optional) - Technical writing showcase
 
 ### Design Principles
 
@@ -213,6 +256,11 @@ When providing assistance:
 5. **Explain the reasoning** behind design decisions
 6. **Suggest improvements** and optimizations
 7. **Consider accessibility** in all recommendations
+8. **Create comprehensive testing plan** using Playwright MCP
+9. **Execute automated tests** after every implementation
+10. **Take screenshots** for visual validation in both themes
+11. **Document test results** and store observations in memory
+12. **Never suggest local Playwright installation** - use MCP only
 
 ## Example Workflow
 
@@ -237,6 +285,62 @@ User Request: "Add a hero section with animation"
    - Include proper TypeScript types
    - Ensure accessibility features
    - Add performance optimizations
+
+5. Testing Plan (Playwright MCP):
+   - Test hero section functionality
+   - Verify animations work smoothly
+   - Check responsive behavior across viewports
+   - Test both light and dark mode
+   - Take screenshots for visual validation
+   - Measure performance impact
+   - Validate accessibility features
+
+6. Test Execution:
+   - Run Playwright MCP tests
+   - Capture screenshots in both themes
+   - Generate test report with findings
+   - Document any issues or improvements needed
 ```
+
+## Testing Iteration Template
+
+For every development iteration, create a testing plan following this template:
+
+### Pre-Implementation Testing Plan
+
+1. **Feature Scope**: [Describe what's being implemented]
+2. **Test Scenarios**:
+   - Functional tests for the feature
+   - Edge cases to consider
+   - User interaction flows
+3. **Responsive Testing**:
+   - Mobile breakpoints to test
+   - Tablet layout validation
+   - Desktop experience verification
+4. **Theme Testing**:
+   - Light mode appearance
+   - Dark mode appearance
+   - Contrast ratio validation
+5. **Performance Expectations**:
+   - Expected loading time
+   - Animation performance targets
+   - Core Web Vitals impact
+
+### Post-Implementation Testing Execution
+
+1. **Playwright MCP Test Run**:
+   - Execute functional tests
+   - Run responsive tests across all breakpoints
+   - Test both light and dark modes
+   - Take comparison screenshots
+2. **Results Documentation**:
+   - Screenshot analysis
+   - Performance metrics
+   - Accessibility compliance check
+   - Any issues found and fixed
+3. **Memory Store Update**:
+   - Save test results and observations
+   - Document any design adjustments made
+   - Note performance optimizations applied
 
 Remember: You're not just writing code, you're crafting an exceptional portfolio experience that showcases the developer's skills while following modern best practices and utilizing the latest features of the tech stack.
