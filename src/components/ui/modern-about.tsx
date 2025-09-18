@@ -68,7 +68,7 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
           viewport={{ once: true }}
           className="text-center mb-16 w-full flex flex-col items-center"
         >
-          <div className="inline-block px-4 py-2 bg-primary/10 text-center text-primary text-sm font-medium rounded-full mb-6">
+          <div className="inline-block px-4 py-2 bg-primary/10 text-center text-[#FF6B6B] text-lg font-bold rounded-full mb-6">
             {tagText}
           </div>
           <h2 className="text-4xl md:text-5xl text-center font-bold text-gray-900 mb-6 max-w-4xl">
@@ -105,8 +105,8 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
                   >
                     <Card className="p-8 h-full bg-transparent rounded-2xl shadow-none hover:shadow-none transition-all duration-300 border-0">
                       {/* Icon */}
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <section.icon className="w-6 h-6 text-primary" />
+                      <div className="w-12 h-12 bg-[#FF6B6B]/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <section.icon className="w-6 h-6 text-[#FF6B6B]" />
                       </div>
 
                       {/* Title */}
@@ -152,8 +152,8 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
                   >
                     <Card className="p-8 h-full bg-transparent rounded-2xl shadow-none hover:shadow-none transition-all duration-300 border-0">
                       {/* Icon */}
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <section.icon className="w-6 h-6 text-primary" />
+                      <div className="w-12 h-12 bg-[#FF6B6B]/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <section.icon className="w-6 h-6 text-[#FF6B6B]" />
                       </div>
 
                       {/* Title */}
