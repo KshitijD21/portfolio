@@ -21,7 +21,7 @@ const profileConfigs = [
     bgGradient: "bg-gradient-to-br from-amber-100 to-orange-100",
   },
   {
-    src: "/profile photo.png",
+    src: "/profile-photo.png",
     borderColor: "border-blue-300",
     shadowColor: "shadow-blue-200/50",
     bgGradient: "bg-gradient-to-br from-blue-100 to-indigo-100",
@@ -33,10 +33,22 @@ const profileConfigs = [
     bgGradient: "bg-gradient-to-br from-green-100 to-emerald-100",
   },
   {
-    src: "/profile photo.png",
+    src: "/profile-photo.png",
     borderColor: "border-purple-300",
     shadowColor: "shadow-purple-200/50",
     bgGradient: "bg-gradient-to-br from-purple-100 to-pink-100",
+  },
+  {
+    src: "/Kshitij.png",
+    borderColor: "border-rose-300",
+    shadowColor: "shadow-rose-200/50",
+    bgGradient: "bg-gradient-to-br from-rose-100 to-pink-100",
+  },
+  {
+    src: "/profile-photo.png",
+    borderColor: "border-teal-300",
+    shadowColor: "shadow-teal-200/50",
+    bgGradient: "bg-gradient-to-br from-teal-100 to-cyan-100",
   },
 ];
 
