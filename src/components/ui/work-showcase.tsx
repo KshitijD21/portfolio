@@ -42,8 +42,8 @@ const workData = [
       "SageMaker",
     ],
     image: "/cloudgov.png",
-    githubUrl: "https://github.com/yourusername/cloudgov",
-    liveUrl: "https://cloudgov.ai",
+    githubUrl: "",
+    liveUrl: "https://cloudgov.ai/",
   },
   {
     id: 3,
@@ -75,8 +75,8 @@ const workData = [
       "Java",
     ],
     image: "/trzr.png",
-    githubUrl: "https://github.com/yourusername/trzr",
-    liveUrl: "https://trzr.app",
+    githubUrl: "",
+    liveUrl: "https://apps.apple.com/us/app/trzr/id6478006505",
   },
   {
     id: 4,
@@ -102,8 +102,8 @@ const workData = [
       "Cypress",
     ],
     image: "/Xubikle.png",
-    githubUrl: "https://github.com/yourusername/xubikle",
-    liveUrl: "https://xubikle.com",
+    githubUrl: "",
+    liveUrl: "https://xubikle.com/",
   },
   {
     id: 5,
@@ -126,8 +126,8 @@ const workData = [
       "Charting Libraries",
     ],
     image: "/promptping.png",
-    githubUrl: "https://github.com/yourusername/promptping",
-    liveUrl: "https://promptping.app",
+    githubUrl: "https://github.com/KshitijD21/mail-tracker-ui",
+    liveUrl: "",
   },
   {
     id: 6,
@@ -148,8 +148,8 @@ const workData = [
     ],
     technologies: ["React", "React Flow", "Zustand", "TypeScript", "UnoCSS"],
     image: "/chatbot.png",
-    githubUrl: "https://github.com/yourusername/chatbot-flow-builder",
-    liveUrl: "https://chatbot-flow-builder.vercel.app",
+    githubUrl: "https://github.com/KshitijD21/chatbot-flow-builder-kit",
+    liveUrl: "",
   },
   {
     id: 7,
@@ -176,8 +176,8 @@ const workData = [
       "TypeScript",
     ],
     image: "/inbox.png", // Added inbox.png image
-    githubUrl: "https://github.com/yourusername/inboxos",
-    liveUrl: "https://inboxos.com",
+    githubUrl: "https://github.com/denishsharma/dubrio-phoenix-gateway",
+    liveUrl: "",
   },
 ];
 
