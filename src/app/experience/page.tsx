@@ -1,7 +1,12 @@
 "use client";
 
-import { WorkSection } from "@/components/ui/work-section";
+import { WorkShowcase } from "@/components/ui/work-showcase";
 
 export default function ExperiencePage() {
-  return <WorkSection />;
+  return (
+    <main className="relative">
+      {/* <WorkSection /> */}
+      <WorkShowcase />
+    </main>
+  );
 }
