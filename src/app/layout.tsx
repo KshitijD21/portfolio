@@ -1,4 +1,3 @@
-import { AuthenticMacOSDock } from "@/components/authentic-macos-dock";
 import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -63,7 +62,6 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-        <AuthenticMacOSDock />
       </body>
     </html>
   );
