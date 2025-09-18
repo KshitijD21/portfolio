@@ -116,3 +116,13 @@ body::before {
   outline: 2px solid var(--coral-500);
   outline-offset: 2px;
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
