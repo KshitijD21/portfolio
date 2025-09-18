@@ -1,5 +1,7 @@
 "use client";
 
+import { ResumeActions } from "@/components/ui/resume-actions";
+import { SocialIcons } from "@/components/ui/social-icons";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -155,33 +157,41 @@ export function ModernHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 pt-2"
+            className="flex flex-col gap-6 pt-2"
           >
-            <motion.button
-              whileHover={{ scale: 1.02, y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 px-16 py-6 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[4rem] min-w-[200px] border-2 border-gray-200 hover:border-gray-300"
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Check My Work
-            </motion.button>
+            {/* Buttons Container */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <motion.button
+                whileHover={{ scale: 1.02, y: -1 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 px-12 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-gray-300"
+                onClick={() =>
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Check My Work
+              </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.02, y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-16 py-6 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[4rem] min-w-[200px]"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <ResumeActions />
+              </motion.div>
+            </div>
+
+            {/* Social Icons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="self-start"
             >
-              Contact Me
-            </motion.button>
+              <SocialIcons />
+            </motion.div>
           </motion.div>
         </motion.div>
 
