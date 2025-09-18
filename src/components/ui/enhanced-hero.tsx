@@ -44,7 +44,7 @@ export function EnhancedHero() {
             Explore My Work
           </button>
           <button className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-            Let's Connect
+            Let&apos;s Connect
           </button>
         </motion.div>
       </div>

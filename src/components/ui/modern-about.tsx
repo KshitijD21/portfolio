@@ -53,10 +53,12 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
   ];
 
   const data = aboutData;
-  const sectionId = "about";
-  const tagText = "ABOUT ME";
+  const sectionId = type === "about" ? "about" : "services";
+  const tagText = type === "about" ? "ABOUT ME" : "MY SERVICES";
   const heading =
-    "Here's a glimpse into how I approach problems, people, and projects.";
+    type === "about"
+      ? "Here's a glimpse into how I approach problems, people, and projects."
+      : "Here's how I can help bring your ideas to life.";
 
   return (
     <section id={sectionId} className="py-20 bg-gray-50">

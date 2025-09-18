@@ -59,7 +59,7 @@ export function ModernHero() {
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [profileConfig, setProfileConfig] = useState(
+  const [profileConfig] = useState(
     () => profileConfigs[Math.floor(Math.random() * profileConfigs.length)]
   );
 
@@ -118,7 +118,7 @@ export function ModernHero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl text-gray-600 font-medium"
           >
-            Hi, I'm Kshitij 👋
+            Hi, I&apos;m Kshitij 👋
           </motion.p>
 
           {/* Main tagline in bold brown - forced to exactly 2 lines */}

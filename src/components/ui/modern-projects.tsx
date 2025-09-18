@@ -53,8 +53,8 @@ export function ModernProjectsSection() {
             Featured Projects
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Here are some of the projects I've worked on that showcase my skills
-            and passion for development.
+            Here are some of the projects I&apos;ve worked on that showcase my
+            skills and passion for development.
           </p>
         </motion.div>
 

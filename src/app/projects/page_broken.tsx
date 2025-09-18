@@ -1,6 +1,5 @@
 "use client";
 
-import { ProjectShowcase } from "@/components/ui/project-showcase";
 import { motion } from "framer-motion";
 import { Target } from "lucide-react";
 
@@ -23,77 +22,33 @@ export default function ProjectsPage() {
                   Portfolio Showcase
                 </span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                My Projects
-              </h1>
-              
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                A comprehensive collection of my work, showcasing expertise in 
-                full-stack development, cloud architecture, and modern web technologies.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Projects Showcase */}
-        <ProjectShowcase />
-
-        {/* Contact CTA */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                Interested in Working Together?
-              </h2>
-              
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Let's discuss your project and see how I can help bring your ideas to life.
-              </p>
-              
-              <div className="flex justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
-                >
-                  Get In Touch
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-}
                 🚀{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   My Projects
                 </span>
               </h1>
-              
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                A curated collection of projects that showcase my technical skills, 
-                creativity, and passion for building exceptional digital experiences.
+
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                A curated collection of projects that showcase my technical
+                skills, creativity, and passion for building exceptional digital
+                experiences.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Projects Showcase */}
+        {/* Projects Content Placeholder */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <ProjectShowcase />
+            <div className="text-center">
+              <p className="text-gray-600">Projects showcase coming soon...</p>
+            </div>
           </div>
         </section>
 
-        {/* Call to Action */}
+        {/* Contact CTA */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -108,8 +63,9 @@ export default function ProjectsPage() {
               </h2>
 
               <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
-                Let's collaborate and turn your ideas into reality. I'm always excited 
-                to work on innovative projects that make a difference.
+                Let&apos;s collaborate and turn your ideas into reality.
+                I&apos;m always excited to work on innovative projects that make
+                a difference.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -117,20 +73,9 @@ export default function ProjectsPage() {
                   href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Start a Project
-                </motion.a>
-                
-                <motion.a
-                  href="/skills"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-600 transition-all duration-300"
-                >
-                  <Target className="w-5 h-5 mr-2" />
-                  View My Skills
+                  Get In Touch
                 </motion.a>
               </div>
             </motion.div>

@@ -26,7 +26,6 @@ export function ExperienceCard({
   achievements,
   technologies,
   image,
-  index,
 }: ExperienceCardProps) {
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },

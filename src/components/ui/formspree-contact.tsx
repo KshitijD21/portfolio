@@ -91,13 +91,13 @@ export function FormspreeContactForm({
             GET IN TOUCH
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 max-w-4xl">
-            Let's Build Something Cool
+            Let&apos;s Build Something Cool
           </h2>
           <p className="text-lg text-black leading-relaxed max-w-2xl">
             <span className="font-semibold">
-              Drop me a message, and let's see where this goes.
+              Drop me a message, and let&apos;s see where this goes.
             </span>{" "}
-            Worst case, you'll just brighten my day 😊
+            Worst case, you&apos;ll just brighten my day 😊
           </p>
         </motion.div>
 
@@ -207,7 +207,7 @@ export function FormspreeContactForm({
                     <div className="flex items-center justify-center p-6 bg-green-50 border-2 border-green-200 rounded-xl">
                       <Check className="h-6 w-6 text-green-600 mr-3" />
                       <span className="text-green-800 font-semibold text-base">
-                        Thanks! I'll get back to you soon 🚀
+                        Thanks! I&apos;ll get back to you soon 🚀
                       </span>
                     </div>
                   )}

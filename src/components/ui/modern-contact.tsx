@@ -44,8 +44,8 @@ export function ModernContactSection() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Let's discuss your next project or just say hello. I'm always open
-            to new opportunities and interesting conversations.
+            Let&apos;s discuss your next project or just say hello. I&apos;m
+            always open to new opportunities and interesting conversations.
           </p>
         </motion.div>
 
