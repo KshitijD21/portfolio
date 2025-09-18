@@ -1,37 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  SiAmazon,
-  SiApachekafka,
-  SiCss3,
-  SiCypress,
-  SiDocker,
-  SiGit,
-  SiGithubactions,
-  SiGrafana,
-  SiGraphql,
-  SiHtml5,
-  SiJavascript,
-  SiJest,
-  SiMongodb,
-  SiMysql,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiNumpy,
-  SiOpenai,
-  SiPandas,
-  SiPrometheus,
-  SiPython,
-  SiReact,
-  SiRedis,
-  SiSpring,
-  SiTypescript,
-} from "react-icons/si";
+import StackIcon from "tech-stack-icons";
 
 interface TechItem {
   name: string;
-  icon: React.ComponentType<{ className?: string }>;
+  iconName: string;
 }
 
 interface TechCategory {
@@ -44,61 +18,58 @@ export function ModernSkillsSection() {
     {
       title: "Programming Languages",
       items: [
-        { name: "JavaScript", icon: SiJavascript },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "Python", icon: SiPython },
+        { name: "JavaScript", iconName: "js" },
+        { name: "TypeScript", iconName: "typescript" },
+        { name: "Python", iconName: "python" },
       ],
     },
     {
       title: "Backend & Databases",
       items: [
-        { name: "Spring Boot", icon: SiSpring },
-        { name: "MySQL", icon: SiMysql },
-        { name: "MongoDB", icon: SiMongodb },
-        { name: "Redis", icon: SiRedis },
-        { name: "Kafka", icon: SiApachekafka },
+        { name: "Spring Boot", iconName: "spring" },
+        { name: "Node.js", iconName: "nodejs" },
+        { name: "MySQL", iconName: "mysql" },
+        { name: "PostgreSQL", iconName: "postgresql" },
+        { name: "MongoDB", iconName: "mongodb" },
+        { name: "Redis", iconName: "redis" },
+        { name: "GraphQL", iconName: "graphql" },
       ],
     },
     {
       title: "Web & Mobile Development",
       items: [
-        { name: "React.js", icon: SiReact },
-        { name: "Next.js", icon: SiNextdotjs },
-        { name: "Node.js", icon: SiNodedotjs },
-        { name: "HTML", icon: SiHtml5 },
-        { name: "CSS", icon: SiCss3 },
-        { name: "GraphQL", icon: SiGraphql },
+        { name: "React.js", iconName: "react" },
+        { name: "", iconName: "nextjs" },
+        { name: "React Native", iconName: "react" },
+        { name: "HTML5", iconName: "html5" },
+        { name: "CSS3", iconName: "css3" },
       ],
     },
     {
       title: "Testing",
       items: [
-        { name: "Jest", icon: SiJest },
-        { name: "Cypress", icon: SiCypress },
+        { name: "Jest", iconName: "jest" },
+        { name: "Cypress", iconName: "cypress" },
       ],
     },
     {
       title: "Cloud & DevOps",
       items: [
-        { name: "AWS", icon: SiAmazon },
-        { name: "Docker", icon: SiDocker },
-        { name: "Git", icon: SiGit },
-        { name: "GitHub Actions", icon: SiGithubactions },
+        { name: "AWS", iconName: "aws" },
+        { name: "Docker", iconName: "docker" },
+        { name: "Kubernetes", iconName: "kubernetes" },
+        { name: "Git", iconName: "git" },
       ],
     },
     {
-      title: "Observability",
-      items: [
-        { name: "Prometheus", icon: SiPrometheus },
-        { name: "Grafana", icon: SiGrafana },
-      ],
+      title: "Observability & Monitoring",
+      items: [{ name: "Grafana", iconName: "grafana" }],
     },
     {
       title: "AI & Data",
       items: [
-        { name: "OpenAI", icon: SiOpenai },
-        { name: "Pandas", icon: SiPandas },
-        { name: "NumPy", icon: SiNumpy },
+        { name: "OpenAI", iconName: "openai" },
+        { name: "Bedrock", iconName: "bedrock" },
       ],
     },
   ];
@@ -126,18 +97,18 @@ export function ModernSkillsSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
-              className="flex flex-col lg:flex-row lg:items-center"
+              className="flex flex-col gap-16 lg:flex-row lg:items-center"
             >
               {/* Category Title */}
               <div className="w-full lg:w-1/3 flex-shrink-0 mb-6 lg:mb-0">
-                <h3 className="text-3xl font-bold text-[#8D7662] text-left lg:text-left">
+                <h3 className="text-3xl font-bold text-primary text-left lg:text-left">
                   {category.title}
                 </h3>
               </div>
 
               {/* Tech Icons Row */}
-              <div className="w-full lg:w-2/3 flex flex-wrap gap-6 lg:gap-8 lg:pl-8">
-                {category.items.slice(0, 6).map((tech, techIndex) => (
+              <div className=" flex flex-row items-baseline lg:w-2/3 flex flex-wrap gap-6 lg:gap-8 lg:pl-8">
+                {category.items.map((tech, techIndex) => (
                   <motion.div
                     key={tech.name}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -150,8 +121,11 @@ export function ModernSkillsSection() {
                     className="flex flex-row items-center group cursor-pointer"
                   >
                     {/* Tech Icon */}
-                    <div className="w-16 h-16 mb-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                      <tech.icon className="w-12 h-12 transition-all duration-300 group-hover:scale-110" />
+                    <div className="w-16 h-16  flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <StackIcon
+                        name={tech.iconName}
+                        className="w-12 h-12 transition-all duration-300 group-hover:scale-110"
+                      />
                     </div>
 
                     {/* Tech Name */}
