@@ -1,6 +1,7 @@
 "use client";
 
 import { Navigation } from "@/components/navigation";
+import { FormspreeContactForm } from "@/components/ui/formspree-contact";
 import { ModernAboutSection } from "@/components/ui/modern-about";
 import { ModernContactSection } from "@/components/ui/modern-contact";
 import { ModernHero } from "@/components/ui/modern-hero";
@@ -51,6 +52,11 @@ export default function HomePage() {
       {/* Skills Section */}
       <div className="snap-start">
         <ModernSkillsSection />
+      </div>
+
+      {/* Formspree Contact Form */}
+      <div className="snap-start">
+        <FormspreeContactForm formspreeId="xeolyqqy" />
       </div>
 
       {/* Projects Section */}
