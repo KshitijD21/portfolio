@@ -21,7 +21,7 @@ export function ResumeActions() {
   return (
     <button
       onClick={handleResumeClick}
-      className="inline-flex items-center gap-2 rounded-lg px-12 py-4 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg px-8 sm:px-12 py-3 sm:py-4 text-white font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
       style={
         {
           backgroundColor: "#FF6B6B",
@@ -31,7 +31,7 @@ export function ResumeActions() {
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FF5252")}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FF6B6B")}
     >
-      <Download className="h-5 w-5" />
+      <Download className="h-4 w-4 sm:h-5 sm:w-5" />
       View Resume
     </button>
   );

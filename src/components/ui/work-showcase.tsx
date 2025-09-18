@@ -212,19 +212,20 @@ export function WorkShowcase() {
           key={work.id}
           className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
         >
-          <div className="w-full max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-              {/* Image Section - Left Side (60%) */}
+          <div className="w-full max-w-6xl mx-auto">
+            {/* Vertical layout - Image on top, content below */}
+            <div className="flex flex-col gap-8 lg:gap-12 items-center">
+              {/* Image Section - Top */}
               <motion.div
-                initial={{ opacity: 0, x: -60 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.8,
                   delay: 0.2,
-                  ease: [0.25, 0.46, 0.45, 0.94], // smoother easing
+                  ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="order-2 lg:order-1 lg:col-span-3"
+                className="w-full max-w-4xl"
               >
                 {work.image ? (
                   <motion.div
@@ -234,30 +235,30 @@ export function WorkShowcase() {
                     <Image
                       src={work.image}
                       alt={`${work.title} preview`}
-                      width={900}
+                      width={1000}
                       height={600}
-                      className="w-full h-auto max-h-[80vh] object-contain transition-all duration-500 hover:shadow-2xl"
+                      className="w-full h-auto max-h-[70vh] object-contain transition-all duration-500 hover:shadow-2xl rounded-lg"
                       priority={index === 0}
                     />
                   </motion.div>
                 ) : (
-                  <div className="flex items-center justify-center h-[60vh]">
+                  <div className="flex items-center justify-center h-[50vh] bg-gray-100 rounded-lg">
                     <ExternalLink className="w-24 h-24 text-gray-400" />
                   </div>
                 )}
               </motion.div>
 
-              {/* Content Section - Right Side (40%) */}
+              {/* Content Section - Bottom */}
               <motion.div
-                initial={{ opacity: 0, x: 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.8,
                   delay: 0.4,
-                  ease: [0.25, 0.46, 0.45, 0.94], // smoother easing
+                  ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="order-1 lg:order-2 lg:col-span-2 space-y-6"
+                className="w-full max-w-5xl text-center lg:text-left space-y-6"
               >
                 {/* Tag */}
                 <motion.div
@@ -269,6 +270,7 @@ export function WorkShowcase() {
                     duration: 0.6,
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
+                  className="flex justify-center lg:justify-start"
                 >
                   <Badge
                     variant="outline"
@@ -289,7 +291,7 @@ export function WorkShowcase() {
                     {work.title}
                   </h3>
                   {work.company && (
-                    <div className="flex flex-col gap-1 mb-4">
+                    <div className="flex flex-col gap-1 mb-4 items-center lg:items-start">
                       <p className="text-lg font-semibold text-gray-700">
                         {work.company}
                         {work.location && (
@@ -304,66 +306,72 @@ export function WorkShowcase() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 leading-relaxed text-base">
+                <p className="text-gray-700 leading-relaxed text-base max-w-4xl mx-auto lg:mx-0">
                   {work.description}
                 </p>
 
-                {/* Achievements */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                    <Star className="w-5 h-5 text-[#CC5500]" />
-                    Key Achievements
-                  </h4>
-                  <ul className="space-y-3">
-                    {work.achievements.map((achievement, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ delay: 0.3 + idx * 0.1, duration: 0.4 }}
-                        className="flex items-start gap-3"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-[#CC5500] mt-2.5 flex-shrink-0" />
-                        <span className="text-gray-600 leading-relaxed text-sm">
-                          {achievement}
-                        </span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Tech Stack */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                    <Star className="w-5 h-5 text-[#CC5500]" />
-                    Technology Stack
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {work.technologies.map((tech, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ delay: 0.2 + idx * 0.03, duration: 0.3 }}
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <Badge
-                          variant="outline"
-                          className="border-gray-300 text-gray-700 hover:border-[#CC5500] hover:text-[#CC5500] transition-colors duration-200 px-3 py-1.5 text-sm font-medium"
+                {/* Two Column Layout for Achievements and Tech Stack */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Achievements */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2 justify-center lg:justify-start">
+                      <Star className="w-5 h-5 text-[#CC5500]" />
+                      Key Achievements
+                    </h4>
+                    <ul className="space-y-3">
+                      {work.achievements.map((achievement, idx) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true, amount: 0.5 }}
+                          transition={{ delay: 0.3 + idx * 0.1, duration: 0.4 }}
+                          className="flex items-start gap-3 text-left"
                         >
-                          {tech}
-                        </Badge>
-                      </motion.div>
-                    ))}
+                          <div className="w-2 h-2 rounded-full bg-[#CC5500] mt-2.5 flex-shrink-0" />
+                          <span className="text-gray-600 leading-relaxed text-sm">
+                            {achievement}
+                          </span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2 justify-center lg:justify-start">
+                      <Star className="w-5 h-5 text-[#CC5500]" />
+                      Technology Stack
+                    </h4>
+                    <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                      {work.technologies.map((tech, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true, amount: 0.5 }}
+                          transition={{
+                            delay: 0.2 + idx * 0.03,
+                            duration: 0.3,
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <Badge
+                            variant="outline"
+                            className="border-gray-300 text-gray-700 hover:border-[#CC5500] hover:text-[#CC5500] transition-colors duration-200 px-3 py-1.5 text-sm font-medium"
+                          >
+                            {tech}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
                   {/* GitHub Button - Only show for Personal Projects */}
-                  {work.tag === "Personal Project" && (
+                  {work.tag === "Personal Project" && work.githubUrl && (
                     <motion.a
                       href={work.githubUrl}
                       target="_blank"
