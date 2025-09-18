@@ -3,9 +3,7 @@
 import { Navigation } from "@/components/navigation";
 import { FormspreeContactForm } from "@/components/ui/formspree-contact";
 import { ModernAboutSection } from "@/components/ui/modern-about";
-import { ModernContactSection } from "@/components/ui/modern-contact";
 import { ModernHero } from "@/components/ui/modern-hero";
-import { ModernProjectsSection } from "@/components/ui/modern-projects";
 import { ModernSkillsSection } from "@/components/ui/modern-skills";
 import { Preloader } from "@/components/ui/preloader";
 import { WorkShowcase } from "@/components/ui/work-showcase";
@@ -59,15 +57,8 @@ export default function HomePage() {
         <FormspreeContactForm formspreeId="xeolyqqy" />
       </div>
 
-      {/* Projects Section */}
-      <div className="snap-start">
-        <ModernProjectsSection />
-      </div>
-
-      {/* Contact Section */}
-      <div className="snap-start">
-        <ModernContactSection />
-      </div>
+      {/* Footer */}
+      {/* <Footer /> */}
     </main>
   );
 }
