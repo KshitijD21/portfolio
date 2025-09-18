@@ -17,6 +17,7 @@ const workData = [
     id: 2,
     title: "Cloudgov",
     company: "RKS Cloud",
+    location: "Irvine, CA",
     duration: "Dec 2022 – Dec 2024",
     tag: "Professional Experience",
     tagIcon: Briefcase,
@@ -48,6 +49,7 @@ const workData = [
     id: 3,
     title: "TRZR",
     company: "TRZR Inc.",
+    location: "Irvine, CA",
     duration: "Dec 2022 – Dec 2024",
     tag: "Professional Experience",
     tagIcon: Briefcase,
@@ -78,6 +80,30 @@ const workData = [
   },
   {
     id: 4,
+    title: "PromptPing — Smart Mail Tracker with AI Replies",
+    company: "",
+    duration: "",
+    tag: "Personal Project",
+    tagIcon: User,
+    description:
+      "PromptPing is a productivity-focused mail assistant I built to combine real-time email engagement tracking with AI-powered reply suggestions. The platform helps professionals and teams understand recipient behavior through analytics while reducing the time spent writing and following up on emails.",
+    achievements: [
+      "Developed a real-time email tracker that logs open counts and timestamps, bypasses Gmail proxy limitations, and visualizes engagement trends with analytics dashboards and time-based graphs — improving visibility into recipient behavior by 35%.",
+      "Integrated Gemini Pro–powered reply suggestions and smart follow-up detection into Gmail, leveraging prompt-engineered templates, a React UI, and Spring Boot APIs to automate responses — cutting reply time by 55% and streamlining workflows.",
+    ],
+    technologies: [
+      "React",
+      "Spring Boot",
+      "Gmail API",
+      "Gemini Pro",
+      "Charting Libraries",
+    ],
+    image: "/promptping.png",
+    githubUrl: "https://github.com/yourusername/promptping",
+    liveUrl: "https://promptping.app",
+  },
+  {
+    id: 5,
     title: "Chatbot Flow Builder Kit",
     company: "",
     duration: "",
@@ -99,7 +125,7 @@ const workData = [
     liveUrl: "https://chatbot-flow-builder.vercel.app",
   },
   {
-    id: 5,
+    id: 6,
     title: "InboxOS — Customer Messaging Platform",
     company: "",
     duration: "",
@@ -130,14 +156,17 @@ const workData = [
 
 export function WorkShowcase() {
   return (
-    <section className="relative snap-y snap-mandatory overflow-y-auto h-screen">
+    <section className="relative">
       {/* Section Header */}
-      <div className="min-h-screen flex items-center justify-center snap-start px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94], // smoother easing
+          }}
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-amber-800 mb-4">
@@ -154,49 +183,65 @@ export function WorkShowcase() {
       {workData.map((work, index) => (
         <div
           key={work.id}
-          className="min-h-screen flex items-center justify-center snap-start px-4 sm:px-6 lg:px-8 pt-20"
+          className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
         >
           <div className="w-full max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
               {/* Image Section - Left Side (60%) */}
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.2,
+                  ease: [0.25, 0.46, 0.45, 0.94], // smoother easing
+                }}
                 className="order-2 lg:order-1 lg:col-span-3"
               >
-                <div className="relative w-full h-[70vh] lg:h-[75vh] rounded-2xl overflow-hidden shadow-lg">
-                  {work.image ? (
+                {work.image ? (
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
                     <Image
                       src={work.image}
                       alt={`${work.title} preview`}
-                      fill
-                      className="object-contain transition-transform duration-300 hover:scale-105"
+                      width={900}
+                      height={600}
+                      className="w-full h-auto max-h-[80vh] object-contain transition-all duration-500 hover:shadow-2xl"
                       priority={index === 0}
                     />
-                  ) : (
-                    <div className="flex items-center justify-center h-full">
-                      <ExternalLink className="w-24 h-24 text-gray-400" />
-                    </div>
-                  )}
-                </div>
+                  </motion.div>
+                ) : (
+                  <div className="flex items-center justify-center h-[60vh]">
+                    <ExternalLink className="w-24 h-24 text-gray-400" />
+                  </div>
+                )}
               </motion.div>
 
               {/* Content Section - Right Side (40%) */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.4,
+                  ease: [0.25, 0.46, 0.45, 0.94], // smoother easing
+                }}
                 className="order-1 lg:order-2 lg:col-span-2 space-y-6"
               >
                 {/* Tag */}
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: -20, scale: 0.8 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.5 }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
+                  transition={{
+                    delay: 0.6,
+                    duration: 0.6,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
                   <Badge
                     variant="outline"
@@ -220,6 +265,11 @@ export function WorkShowcase() {
                     <div className="flex flex-col gap-1 mb-4">
                       <p className="text-lg font-semibold text-gray-700">
                         {work.company}
+                        {work.location && (
+                          <span className="text-sm text-gray-500 ml-2">
+                            • {work.location}
+                          </span>
+                        )}
                       </p>
                       <p className="text-sm text-gray-600">{work.duration}</p>
                     </div>
@@ -296,12 +346,12 @@ export function WorkShowcase() {
                       className="flex items-center justify-center gap-3 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 group/btn"
                     >
                       <Github className="w-5 h-5" />
-                      <span>View Code</span>
+                      <span>View on GitHub</span>
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                     </motion.a>
                   )}
 
-                  {/* Live Demo Button */}
+                  {/* Live Demo Button - Show for all projects */}
                   {work.liveUrl && (
                     <motion.a
                       href={work.liveUrl}
@@ -309,7 +359,7 @@ export function WorkShowcase() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-3 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-[#CC5500] hover:text-[#CC5500] transition-colors duration-200 group/btn"
+                      className="flex items-center justify-center gap-3 px-6 py-3 bg-[#CC5500] text-white rounded-lg font-semibold hover:bg-[#B84C00] transition-colors duration-200 group/btn"
                     >
                       <ExternalLink className="w-5 h-5" />
                       <span>Live Demo</span>

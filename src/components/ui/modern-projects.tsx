@@ -2,7 +2,6 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 
@@ -63,18 +62,22 @@ export function ModernProjectsSection() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.15,
+                ease: [0.25, 0.46, 0.45, 0.94], // smoother easing
+              }}
               viewport={{ once: true }}
               className={project.featured ? "md:col-span-2 lg:col-span-1" : ""}
             >
-              <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video relative">
+              <div className="h-full hover:shadow-lg transition-shadow duration-300">
+                <div className="relative mb-4">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain"
+                    className="w-full h-auto max-h-[400px] object-contain transition-transform duration-300 hover:scale-105"
                   />
                   {project.featured && (
                     <Badge className="absolute top-4 left-4" variant="default">
@@ -117,7 +120,7 @@ export function ModernProjectsSection() {
                     </Button>
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </div>

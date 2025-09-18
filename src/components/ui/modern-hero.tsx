@@ -12,11 +12,42 @@ const typewriterPhrases = [
   "features nobody asked for… but everyone needed.",
 ];
 
+// Profile photo configurations with different styles
+const profileConfigs = [
+  {
+    src: "/Kshitij.png",
+    borderColor: "border-amber-300",
+    shadowColor: "shadow-amber-200/50",
+    bgGradient: "bg-gradient-to-br from-amber-100 to-orange-100",
+  },
+  {
+    src: "/profile photo.png",
+    borderColor: "border-blue-300",
+    shadowColor: "shadow-blue-200/50",
+    bgGradient: "bg-gradient-to-br from-blue-100 to-indigo-100",
+  },
+  {
+    src: "/Kshitij.png",
+    borderColor: "border-green-300",
+    shadowColor: "shadow-green-200/50",
+    bgGradient: "bg-gradient-to-br from-green-100 to-emerald-100",
+  },
+  {
+    src: "/profile photo.png",
+    borderColor: "border-purple-300",
+    shadowColor: "shadow-purple-200/50",
+    bgGradient: "bg-gradient-to-br from-purple-100 to-pink-100",
+  },
+];
+
 export function ModernHero() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [profileConfig, setProfileConfig] = useState(
+    () => profileConfigs[Math.floor(Math.random() * profileConfigs.length)]
+  );
 
   useEffect(() => {
     const currentPhrase = typewriterPhrases[currentPhraseIndex];
@@ -142,7 +173,7 @@ export function ModernHero() {
           </motion.div>
         </motion.div>
 
-        {/* Right side - Profile image (oval shape) */}
+        {/* Right side - Profile image (oval shape with random styling) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -150,16 +181,18 @@ export function ModernHero() {
           className="relative flex justify-center lg:justify-end lg:col-span-5"
         >
           <div className="relative">
-            {/* Main profile image - oval shape */}
+            {/* Main profile image - oval shape with random styling */}
             <div className="relative w-96 h-[30rem] lg:w-[26rem] lg:h-[32rem]">
-              <div className="w-full h-full rounded-full flex items-center justify-center overflow-hidden shadow-2xl">
+              <div
+                className={`w-full h-full rounded-full flex items-center justify-center overflow-hidden shadow-2xl ${profileConfig.shadowColor} border-4 ${profileConfig.borderColor} ${profileConfig.bgGradient} p-2`}
+              >
                 {/* Profile image */}
                 <Image
-                  src="/Kshitij.png"
+                  src={profileConfig.src}
                   alt="Kshitij Dumbre"
                   width={450}
                   height={550}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center rounded-full"
                   priority
                 />
               </div>
