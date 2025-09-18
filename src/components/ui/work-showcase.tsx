@@ -80,6 +80,33 @@ const workData = [
   },
   {
     id: 4,
+    title: "Xubikle — Freelance Web Developer",
+    company: "Xubikle",
+    location: "Remote",
+    duration: "Aug 2022 – Nov 2022",
+    tag: "Professional Experience",
+    tagIcon: Briefcase,
+    description:
+      "Xubikle is a global technology company building enterprise software and SaaS solutions to empower the future of work, with products like TalentX (career networking), collaborative whiteboards, and open-source developer tools.",
+    achievements: [
+      "Designed and developed a responsive landing page that clarified value proposition, defined KPIs, optimized layout and SEO, and validated with Jest and Cypress — drove 200+ qualified interactions in the first month.",
+      "Integrated Hotjar and Google Analytics event pipelines to capture real-time user behavior, identified a 65% drop-off rate, restructured content flow, and improved KPI visibility — increasing engagement by 25%.",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "SEO",
+      "Hotjar",
+      "Google Analytics",
+      "Jest",
+      "Cypress",
+    ],
+    image: "/Xubikle.png",
+    githubUrl: "https://github.com/yourusername/xubikle",
+    liveUrl: "https://xubikle.com",
+  },
+  {
+    id: 5,
     title: "PromptPing — Smart Mail Tracker with AI Replies",
     company: "",
     duration: "",
@@ -103,7 +130,7 @@ const workData = [
     liveUrl: "https://promptping.app",
   },
   {
-    id: 5,
+    id: 6,
     title: "Chatbot Flow Builder Kit",
     company: "",
     duration: "",
@@ -125,7 +152,7 @@ const workData = [
     liveUrl: "https://chatbot-flow-builder.vercel.app",
   },
   {
-    id: 6,
+    id: 7,
     title: "InboxOS — Customer Messaging Platform",
     company: "",
     duration: "",
