@@ -1,6 +1,5 @@
+import { AuthenticMacOSDock } from "@/components/authentic-macos-dock";
 import { Footer } from "@/components/footer";
-import { Navigation } from "@/components/navigation";
-import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -16,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "John Doe - Software Development Engineer",
+  title: "Kshitij Dumbre - Software Development Engineer",
   description:
-    "Portfolio of John Doe, a passionate Software Development Engineer with expertise in modern web technologies, scalable backend systems, and innovative solutions.",
+    "Portfolio of Kshitij Dumbre, a passionate Software Development Engineer with expertise in modern web technologies, scalable backend systems, and innovative solutions.",
   keywords: [
     "Software Engineer",
     "Full Stack Developer",
@@ -26,20 +25,21 @@ export const metadata: Metadata = {
     "Node.js",
     "TypeScript",
     "Portfolio",
+    "Kshitij Dumbre",
   ],
-  authors: [{ name: "John Doe" }],
-  creator: "John Doe",
+  authors: [{ name: "Kshitij Dumbre" }],
+  creator: "Kshitij Dumbre",
   openGraph: {
-    title: "John Doe - Software Development Engineer",
+    title: "Kshitij Dumbre - Software Development Engineer",
     description:
       "Portfolio showcasing innovative software solutions and technical expertise",
-    url: "https://johndoe-portfolio.com",
-    siteName: "John Doe Portfolio",
+    url: "https://kshitijdumbre-portfolio.com",
+    siteName: "Kshitij Dumbre Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "John Doe - Software Development Engineer",
+    title: "Kshitij Dumbre - Software Development Engineer",
     description:
       "Portfolio showcasing innovative software solutions and technical expertise",
   },
@@ -59,18 +59,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background font-sans`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <Navigation />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <div className="relative flex min-h-screen flex-col">
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+        <AuthenticMacOSDock />
       </body>
     </html>
   );

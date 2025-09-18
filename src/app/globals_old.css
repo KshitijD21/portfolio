@@ -1,0 +1,326 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f6;
+  --foreground: #392c26;
+  --primary: #ff6b6b;
+  --primary-foreground: #ffffff;
+  --secondary: #8d7662;
+  --secondary-foreground: #ffffff;
+  --accent: #ff6b6b;
+  --accent-foreground: #ffffff;
+  --muted: #f5f3ed;
+  --muted-foreground: #8d7662;
+  --card: #ffffff;
+  --card-foreground: #392c26;
+  --popover: #ffffff;
+  --popover-foreground: #392c26;
+  --border: #e6e1d2;
+  --input: #f0ede4;
+  --ring: #ff6b6b;
+  --destructive: #ff4757;
+  --radius: 0.625rem;
+  /* Color Palette */
+  --cream-50: #fefefe;
+  --cream-100: #faf9f6;
+  --cream-200: #f5f3ed;
+  --cream-300: #f0ede4;
+  --cream-400: #ebe7db;
+  --cream-500: #e6e1d2;
+  --cream-600: #d4cfc0;
+  --cream-700: #c2bdae;
+  --cream-800: #b0ab9c;
+  --cream-900: #9e998a;
+
+  --brown-50: #f7f5f2;
+  --brown-100: #ede8e0;
+  --brown-200: #ddd4c7;
+  --brown-300: #cdbfad;
+  --brown-400: #bdab94;
+  --brown-500: #ad967a;
+  --brown-600: #8d7662;
+  --brown-700: #715d4e;
+  --brown-800: #55453a;
+  --brown-900: #392c26;
+
+  --coral-50: #fff5f5;
+  --coral-100: #ffe8e8;
+  --coral-200: #ffc9c9;
+  --coral-300: #ffaaaa;
+  --coral-400: #ff8b8b;
+  --coral-500: #ff6b6b;
+  --coral-600: #ff4757;
+  --coral-700: #ff3742;
+  --coral-800: #e63946;
+  --coral-900: #cc2936;
+}
+  --brown-700: #715d4e;
+  --brown-800: #55453a;
+  --brown-900: #392c26;
+
+  /* Accent (10%) - #FF6B6B - Coral Red */
+  --coral-50: #fff5f5;
+  --coral-100: #ffe8e8;
+  --coral-200: #ffc9c9;
+  --coral-300: #ffaaaa;
+  --coral-400: #ff8b8b;
+  --coral-500: #ff6b6b;
+  --coral-600: #ff4757;
+  --coral-700: #ff3742;
+  --coral-800: #e63946;
+  --coral-900: #cc2936;
+
+  /* Global Theme Variables */
+  --background: var(--cream-100);
+  --foreground: #333333;
+  --card: var(--cream-50);
+  --card-foreground: #333333;
+  --popover: var(--cream-50);
+  --popover-foreground: #333333;
+  --primary: var(--brown-600);
+  --primary-foreground: var(--cream-50);
+  --secondary: var(--cream-200);
+  --secondary-foreground: #333333;
+  --muted: var(--cream-300);
+  --muted-foreground: var(--brown-600);
+  --accent: var(--coral-500);
+  --accent-foreground: var(--cream-50);
+  --destructive: var(--coral-600);
+  --border: var(--cream-400);
+  --input: var(--cream-200);
+  --ring: var(--coral-400);
+}
+
+* {
+  border-color: var(--border);
+  outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* macOS-style glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Dock magnification effect */
+@keyframes genie {
+  0% { transform: scale(1) rotateY(0deg); }
+  25% { transform: scale(1.2) rotateY(10deg); }
+  50% { transform: scale(0.3) rotateY(-10deg); }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+
+.genie-effect {
+  animation: genie 0.6s ease-out;
+}
+
+/* macOS-style app icon effects */
+.app-icon {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.1) 100%);
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
+}
+
+.app-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - macOS style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Background Patterns */
+.bg-grid-black\/\[0\.02\] {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-grid-white\/\[0\.02\] {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Color Utility Classes */
+.text-gray-333 { color: #333333; }
+
+.text-cream-50 { color: var(--cream-50); }
+.text-cream-100 { color: var(--cream-100); }
+.text-cream-200 { color: var(--cream-200); }
+.text-cream-300 { color: var(--cream-300); }
+.text-cream-400 { color: var(--cream-400); }
+.text-cream-500 { color: var(--cream-500); }
+.text-cream-600 { color: var(--cream-600); }
+.text-cream-700 { color: var(--cream-700); }
+.text-cream-800 { color: var(--cream-800); }
+.text-cream-900 { color: var(--cream-900); }
+
+.text-brown-50 { color: var(--brown-50); }
+.text-brown-100 { color: var(--brown-100); }
+.text-brown-200 { color: var(--brown-200); }
+.text-brown-300 { color: var(--brown-300); }
+.text-brown-400 { color: var(--brown-400); }
+.text-brown-500 { color: var(--brown-500); }
+.text-brown-600 { color: var(--brown-600); }
+.text-brown-700 { color: var(--brown-700); }
+.text-brown-800 { color: var(--brown-800); }
+.text-brown-900 { color: var(--brown-900); }
+
+.text-coral-50 { color: var(--coral-50); }
+.text-coral-100 { color: var(--coral-100); }
+.text-coral-200 { color: var(--coral-200); }
+.text-coral-300 { color: var(--coral-300); }
+.text-coral-400 { color: var(--coral-400); }
+.text-coral-500 { color: var(--coral-500); }
+.text-coral-600 { color: var(--coral-600); }
+.text-coral-700 { color: var(--coral-700); }
+.text-coral-800 { color: var(--coral-800); }
+.text-coral-900 { color: var(--coral-900); }
+
+.bg-cream-50 { background-color: var(--cream-50); }
+.bg-cream-100 { background-color: var(--cream-100); }
+.bg-cream-200 { background-color: var(--cream-200); }
+.bg-cream-300 { background-color: var(--cream-300); }
+.bg-cream-400 { background-color: var(--cream-400); }
+.bg-cream-500 { background-color: var(--cream-500); }
+.bg-cream-600 { background-color: var(--cream-600); }
+.bg-cream-700 { background-color: var(--cream-700); }
+.bg-cream-800 { background-color: var(--cream-800); }
+.bg-cream-900 { background-color: var(--cream-900); }
+
+.bg-brown-50 { background-color: var(--brown-50); }
+.bg-brown-100 { background-color: var(--brown-100); }
+.bg-brown-200 { background-color: var(--brown-200); }
+.bg-brown-300 { background-color: var(--brown-300); }
+.bg-brown-400 { background-color: var(--brown-400); }
+.bg-brown-500 { background-color: var(--brown-500); }
+.bg-brown-600 { background-color: var(--brown-600); }
+.bg-brown-700 { background-color: var(--brown-700); }
+.bg-brown-800 { background-color: var(--brown-800); }
+.bg-brown-900 { background-color: var(--brown-900); }
+
+.bg-coral-50 { background-color: var(--coral-50); }
+.bg-coral-100 { background-color: var(--coral-100); }
+.bg-coral-200 { background-color: var(--coral-200); }
+.bg-coral-300 { background-color: var(--coral-300); }
+.bg-coral-400 { background-color: var(--coral-400); }
+.bg-coral-500 { background-color: var(--coral-500); }
+.bg-coral-600 { background-color: var(--coral-600); }
+.bg-coral-700 { background-color: var(--coral-700); }
+.bg-coral-800 { background-color: var(--coral-800); }
+.bg-coral-900 { background-color: var(--coral-900); }
+
+.border-cream-50 { border-color: var(--cream-50); }
+.border-cream-100 { border-color: var(--cream-100); }
+.border-cream-200 { border-color: var(--cream-200); }
+.border-cream-300 { border-color: var(--cream-300); }
+.border-cream-400 { border-color: var(--cream-400); }
+.border-cream-500 { border-color: var(--cream-500); }
+.border-cream-600 { border-color: var(--cream-600); }
+.border-cream-700 { border-color: var(--cream-700); }
+.border-cream-800 { border-color: var(--cream-800); }
+.border-cream-900 { border-color: var(--cream-900); }
+
+.border-brown-50 { border-color: var(--brown-50); }
+.border-brown-100 { border-color: var(--brown-100); }
+.border-brown-200 { border-color: var(--brown-200); }
+.border-brown-300 { border-color: var(--brown-300); }
+.border-brown-400 { border-color: var(--brown-400); }
+.border-brown-500 { border-color: var(--brown-500); }
+.border-brown-600 { border-color: var(--brown-600); }
+.border-brown-700 { border-color: var(--brown-700); }
+.border-brown-800 { border-color: var(--brown-800); }
+.border-brown-900 { border-color: var(--brown-900); }
+
+.border-coral-50 { border-color: var(--coral-50); }
+.border-coral-100 { border-color: var(--coral-100); }
+.border-coral-200 { border-color: var(--coral-200); }
+.border-coral-300 { border-color: var(--coral-300); }
+.border-coral-400 { border-color: var(--coral-400); }
+.border-coral-500 { border-color: var(--coral-500); }
+.border-coral-600 { border-color: var(--coral-600); }
+.border-coral-700 { border-color: var(--coral-700); }
+.border-coral-800 { border-color: var(--coral-800); }
+.border-coral-900 { border-color: var(--coral-900); }
+
+/* macOS-style icons and dock styling */
+.macos-icon-container {
+  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+  border-radius: 16px; /* macOS icon radius */
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.macos-icon-container:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.macos-icon-container svg {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+}
+
+/* Dock glass effect enhancement */
+.dock-glass {
+  background: rgba(245, 244, 241, 0.1);
+  backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.1);
+}

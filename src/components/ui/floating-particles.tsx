@@ -1,69 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
-interface Particle {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  duration: number;
+interface FloatingParticlesProps {
+  count?: number;
 }
 
-export function FloatingParticles() {
-  const [particles, setParticles] = useState<Particle[]>([]);
-
-  useEffect(() => {
-    const generateParticles = () => {
-      const newParticles: Particle[] = [];
-      for (let i = 0; i < 50; i++) {
-        newParticles.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: Math.random() * 4 + 1,
-          duration: Math.random() * 20 + 10,
-        });
-      }
-      setParticles(newParticles);
-    };
-
-    generateParticles();
-  }, []);
+export function FloatingParticles({ count = 50 }: FloatingParticlesProps) {
+  const particles = Array.from({ length: count }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 5,
+    duration: 10 + Math.random() * 20,
+  }));
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-primary/20"
+          className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
           }}
           animate={{
-            y: [0, -30, 0],
-            opacity: [0.7, 0.3, 0.7],
+            y: [-20, 20, -20],
+            x: [-10, 10, -10],
+            opacity: [0.3, 1, 0.3],
           }}
           transition={{
             duration: particle.duration,
+            delay: particle.delay,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
       ))}
-    </div>
-  );
-}
-
-export function GridPattern() {
-  return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent dark:from-black" />
     </div>
   );
 }

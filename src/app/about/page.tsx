@@ -1,9 +1,7 @@
 "use client";
 
-import { GradientText } from "@/components/ui/animated-text";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GridPattern } from "@/components/ui/floating-particles";
 import { motion } from "framer-motion";
 import { Award, Calendar, GraduationCap, MapPin } from "lucide-react";
 
@@ -44,8 +42,6 @@ const certifications = [
 export default function About() {
   return (
     <div className="relative">
-      <GridPattern />
-
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -55,9 +51,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              About <GradientText>Me</GradientText>
-            </h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4"></h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Get to know the person behind the code
             </p>
