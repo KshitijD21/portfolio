@@ -7,6 +7,7 @@ import { ModernHero } from "@/components/ui/modern-hero";
 import { ModernProjectsSection } from "@/components/ui/modern-projects";
 import { ModernSkillsSection } from "@/components/ui/modern-skills";
 import { Preloader } from "@/components/ui/preloader";
+import { WorkShowcase } from "@/components/ui/work-showcase";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -35,19 +36,32 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <ModernHero />
+      <div className="snap-start">
+        <ModernHero />
+      </div>
 
       {/* About/Services Section */}
-      <ModernAboutSection />
+      <div className="snap-start">
+        <ModernAboutSection />
+      </div>
+
+      {/* Featured Work Section */}
+      <WorkShowcase />
 
       {/* Skills Section */}
-      <ModernSkillsSection />
+      <div className="snap-start">
+        <ModernSkillsSection />
+      </div>
 
       {/* Projects Section */}
-      <ModernProjectsSection />
+      <div className="snap-start">
+        <ModernProjectsSection />
+      </div>
 
       {/* Contact Section */}
-      <ModernContactSection />
+      <div className="snap-start">
+        <ModernContactSection />
+      </div>
     </main>
   );
 }

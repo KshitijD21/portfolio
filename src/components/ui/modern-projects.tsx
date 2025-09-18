@@ -70,11 +70,11 @@ export function ModernProjectsSection() {
               className={project.featured ? "md:col-span-2 lg:col-span-1" : ""}
             >
               <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video bg-gray-100 relative">
+                <div className="aspect-video relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   {project.featured && (
                     <Badge className="absolute top-4 left-4" variant="default">

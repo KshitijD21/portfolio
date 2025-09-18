@@ -151,14 +151,14 @@ export function ModernHero() {
         >
           <div className="relative">
             {/* Main profile image - oval shape */}
-            <div className="relative w-80 h-96 lg:w-96 lg:h-[28rem]">
-              <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
+            <div className="relative w-96 h-[30rem] lg:w-[26rem] lg:h-[32rem]">
+              <div className="w-full h-full rounded-full flex items-center justify-center overflow-hidden shadow-2xl">
                 {/* Profile image */}
                 <Image
                   src="/Kshitij.png"
                   alt="Kshitij Dumbre"
-                  width={400}
-                  height={500}
+                  width={450}
+                  height={550}
                   className="w-full h-full object-cover object-center"
                   priority
                 />
