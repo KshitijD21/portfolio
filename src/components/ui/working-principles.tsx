@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Settings, Users, Target } from "lucide-react";
+import { Settings, Target, Users } from "lucide-react";
 
 const workingPrinciples = [
   {
@@ -11,10 +11,10 @@ const workingPrinciples = [
     bgColor: "bg-red-50",
     points: [
       "I don&apos;t jump straight into code; I first dig into why the problem exists.",
-      "Once I know the \"why,\" I research patterns, past solutions, and blind spots.",
+      'Once I know the "why," I research patterns, past solutions, and blind spots.',
       "I design systems that solve today&apos;s problem while scaling for tomorrow.",
-      "Then I code — shipping in milestones, testing assumptions, and refining quickly."
-    ]
+      "Then I code — shipping in milestones, testing assumptions, and refining quickly.",
+    ],
   },
   {
     icon: Users,
@@ -23,10 +23,10 @@ const workingPrinciples = [
     bgColor: "bg-orange-50",
     points: [
       "I&apos;ve collaborated with teammates across countries and time zones, learning clarity and patience.",
-      "Often the \"translator\" between design and dev, I align creativity with technical reality.",
+      'Often the "translator" between design and dev, I align creativity with technical reality.',
       "I value feedback loops — reviews, brainstorms, retros — to sharpen the product.",
-      "For me, Agile isn&apos;t a checklist; stand-ups and planning keep momentum alive."
-    ]
+      "For me, Agile isn&apos;t a checklist; stand-ups and planning keep momentum alive.",
+    ],
   },
   {
     icon: Target,
@@ -37,9 +37,9 @@ const workingPrinciples = [
       "To me, leadership is ownership — stepping in and owning outcomes.",
       "I led the frontend team at my last company, mentoring juniors and reviewing code.",
       "I took an iOS app from planning to App Store launch, guiding the team through crunch time.",
-      "A proud win: helped a million-dollar client save $11K in just 3 days by re-engineering cloud costs."
-    ]
-  }
+      "A proud win: helped a million-dollar client save $11K in just 3 days by re-engineering cloud costs.",
+    ],
+  },
 ];
 
 export function WorkingPrinciples() {
@@ -68,10 +68,10 @@ export function WorkingPrinciples() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: index * 0.2,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                ease: [0.25, 0.46, 0.45, 0.94],
               }}
               className="flex flex-col items-center text-center"
             >
@@ -80,11 +80,11 @@ export function WorkingPrinciples() {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: index * 0.2 + 0.3,
                   type: "spring",
-                  stiffness: 200
+                  stiffness: 200,
                 }}
                 className={`w-16 h-16 ${principle.bgColor} rounded-full flex items-center justify-center mb-6`}
               >
@@ -104,9 +104,9 @@ export function WorkingPrinciples() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: index * 0.2 + pointIndex * 0.1 + 0.5
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.2 + pointIndex * 0.1 + 0.5,
                     }}
                     className="flex items-start gap-3"
                   >

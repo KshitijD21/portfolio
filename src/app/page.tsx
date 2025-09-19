@@ -6,8 +6,8 @@ import { ModernAboutSection } from "@/components/ui/modern-about";
 import { ModernHero } from "@/components/ui/modern-hero";
 import { ModernSkillsSection } from "@/components/ui/modern-skills";
 import { Preloader } from "@/components/ui/preloader";
-import { WorkingPrinciples } from "@/components/ui/working-principles";
 import { WorkShowcase } from "@/components/ui/work-showcase";
+import { WorkingPrinciples } from "@/components/ui/working-principles";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
