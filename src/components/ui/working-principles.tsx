@@ -58,7 +58,7 @@ export function WorkingPrinciples() {
             ABOUT ME
           </div>
           <h2 className="text-2xl md:text-4xl lg:text-3xl font-bold text-amber-800 mb-4">
-            Here's a glimpse into how I approach problems, people and projects
+            Here&apos;s a glimpse into how I approach problems, people and projects
           </h2>
         </motion.div>
 
