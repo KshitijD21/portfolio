@@ -195,7 +195,7 @@ export function ModernHero() {
                 className="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 px-8 sm:px-12 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-gray-300"
                 onClick={() =>
                   document
-                    .getElementById("projects")
+                    .getElementById("work")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >

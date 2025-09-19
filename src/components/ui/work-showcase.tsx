@@ -183,7 +183,7 @@ const workData = [
 
 export function WorkShowcase() {
   return (
-    <section className="relative">
+    <section id="work" className="relative">
       {/* Section Header */}
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <motion.div
@@ -212,20 +212,20 @@ export function WorkShowcase() {
           key={work.id}
           className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
         >
-          <div className="w-full max-w-6xl mx-auto">
-            {/* Vertical layout - Image on top, content below */}
-            <div className="flex flex-col gap-8 lg:gap-12 items-center">
-              {/* Image Section - Top */}
+          <div className="w-full max-w-7xl mx-auto">
+            {/* Responsive layout: vertical on mobile/tablet, horizontal on laptop+ */}
+            <div className="flex flex-col xl:grid xl:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
+              {/* Image Section */}
               <motion.div
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.8,
                   delay: 0.2,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="w-full max-w-4xl"
+                className="w-full max-w-4xl xl:max-w-none xl:col-span-6 order-1"
               >
                 {work.image ? (
                   <motion.div
@@ -237,7 +237,7 @@ export function WorkShowcase() {
                       alt={`${work.title} preview`}
                       width={1000}
                       height={600}
-                      className="w-full h-auto max-h-[70vh] object-contain transition-all duration-500 hover:shadow-2xl rounded-lg"
+                      className="w-full h-auto max-h-[60vh] xl:max-h-[70vh] object-contain transition-all duration-500 hover:shadow-2xl rounded-lg"
                       priority={index === 0}
                     />
                   </motion.div>
@@ -248,17 +248,17 @@ export function WorkShowcase() {
                 )}
               </motion.div>
 
-              {/* Content Section - Bottom */}
+              {/* Content Section */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.8,
                   delay: 0.4,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="w-full max-w-5xl text-center lg:text-left space-y-6"
+                className="w-full max-w-5xl xl:max-w-none xl:col-span-6 text-center xl:text-left space-y-6 order-2"
               >
                 {/* Tag */}
                 <motion.div
@@ -270,7 +270,7 @@ export function WorkShowcase() {
                     duration: 0.6,
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
-                  className="flex justify-center lg:justify-start"
+                  className="flex justify-center xl:justify-start"
                 >
                   <Badge
                     variant="outline"
@@ -291,7 +291,7 @@ export function WorkShowcase() {
                     {work.title}
                   </h3>
                   {work.company && (
-                    <div className="flex flex-col gap-1 mb-4 items-center lg:items-start">
+                    <div className="flex flex-col gap-1 mb-4 items-center xl:items-start">
                       <p className="text-lg font-semibold text-gray-700">
                         {work.company}
                         {work.location && (
@@ -306,15 +306,15 @@ export function WorkShowcase() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 leading-relaxed text-base max-w-4xl mx-auto lg:mx-0">
+                <p className="text-gray-700 leading-relaxed text-base max-w-4xl mx-auto xl:mx-0">
                   {work.description}
                 </p>
 
-                {/* Two Column Layout for Achievements and Tech Stack */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Single Column Layout for Achievements and Tech Stack on desktop */}
+                <div className="space-y-8">
                   {/* Achievements */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2 justify-center lg:justify-start">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2 justify-center xl:justify-start">
                       <Star className="w-5 h-5 text-[#CC5500]" />
                       Key Achievements
                     </h4>
@@ -324,9 +324,9 @@ export function WorkShowcase() {
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true, amount: 0.5 }}
+                          viewport={{ once: true }}
                           transition={{ delay: 0.3 + idx * 0.1, duration: 0.4 }}
-                          className="flex items-start gap-3 text-left"
+                          className="flex items-start gap-3 text-left max-w-none"
                         >
                           <div className="w-2 h-2 rounded-full bg-[#CC5500] mt-2.5 flex-shrink-0" />
                           <span className="text-gray-600 leading-relaxed text-sm">
@@ -339,11 +339,11 @@ export function WorkShowcase() {
 
                   {/* Tech Stack */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2 justify-center lg:justify-start">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2 justify-center xl:justify-start">
                       <Star className="w-5 h-5 text-[#CC5500]" />
                       Technology Stack
                     </h4>
-                    <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                    <div className="flex flex-wrap gap-2 justify-center xl:justify-start">
                       {work.technologies.map((tech, idx) => (
                         <motion.div
                           key={idx}
@@ -369,7 +369,7 @@ export function WorkShowcase() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center xl:justify-start">
                   {/* GitHub Button - Only show for Personal Projects */}
                   {work.tag === "Personal Project" && work.githubUrl && (
                     <motion.a

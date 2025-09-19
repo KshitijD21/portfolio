@@ -1,8 +1,7 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { motion } from "framer-motion";
 import { Rocket, Settings, Users } from "lucide-react";
+import { WorkingPrinciples } from "./working-principles";
 
 interface SectionData {
   icon: React.ComponentType<{ className?: string }>;
@@ -22,10 +21,10 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
       title: "How I Work",
       description: "",
       items: [
-        "I don't jump straight into code; I first dig into why the problem exists.",
-        'Once I know the "why," I research patterns, past solutions, and blind spots.',
-        "I design systems that solve today's problem while scaling for tomorrow.",
-        "Then I code — shipping in milestones, testing assumptions, and refining quickly.",
+        "I don’t jump straight into code; I first focus on understanding why the problem exists.",
+        'Once I know the "why," I research patterns, review past solutions, and identify blind spots.',
+        "I design systems that not only solve today’s problems but also scale for tomorrow.",
+        "Then I move to coding, delivering in milestones, testing assumptions, and refining quickly.",
       ],
     },
     {
@@ -33,10 +32,10 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
       title: "Working With People",
       description: "",
       items: [
-        "I've collaborated with teammates across countries and time zones, learning clarity and patience.",
-        'Often the "translator" between design and dev, I align creativity with technical reality.',
-        "I value feedback loops — reviews, brainstorms, retros — to sharpen the product.",
-        "For me, Agile isn't a checklist; stand-ups and planning keep momentum alive.",
+        "I’ve collaborated with teammates across countries and time zones, learning clarity and patience.",
+        'I often act as the "translator" between design and development, aligning creativity with reality.',
+        "I value feedback loops through reviews, brainstorms, and retrospectives to sharpen products.",
+        "For me, Agile is not a checklist; stand-ups and planning keep momentum alive.",
       ],
     },
     {
@@ -44,17 +43,17 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
       title: "Taking Ownership",
       description: "",
       items: [
-        "To me, leadership is ownership — stepping in and owning outcomes.",
+        "To me, leadership is ownership, stepping in and owning outcomes.",
         "I led the frontend team at my last company, mentoring juniors and reviewing code.",
         "I took an iOS app from planning to App Store launch, guiding the team through crunch time.",
-        "A proud win: helped a million-dollar client save $11K in just 3 days by re-engineering cloud costs.",
+        "A proud win: helped a million-dollar client save $11K in 3 days by re-engineering cloud costs.",
       ],
     },
   ];
 
   const data = aboutData;
-  const sectionId = type === "about" ? "about" : "services";
-  const tagText = type === "about" ? "ABOUT ME" : "MY SERVICES";
+  const sectionId = "about";
+  const tagText = "ABOUT ME";
   const heading =
     type === "about"
       ? "Here's a glimpse into how I approach problems, people, and projects."
@@ -62,7 +61,7 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
 
   return (
     <section id={sectionId} className="py-20 bg-gray-50">
-      <div className="w-full  mx-auto px-6">
+      {/* <div className="w-full  mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,9 +84,7 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
 
         <div className="flex justify-center">
           <div className="w-full max-w-6xl">
-            {/* Mobile: Horizontal scroll, Desktop: Grid */}
             <div className="lg:grid lg:grid-cols-3 lg:gap-8 lg:gap-12">
-              {/* Mobile horizontal scroll container */}
               <div
                 className="flex gap-8 overflow-x-auto pb-4 lg:hidden scrollbar-hide"
                 style={{
@@ -103,27 +100,22 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
-                    className="flex-none w-80" // Fixed width for mobile cards
                   >
                     <Card className="p-8 h-full bg-transparent rounded-2xl shadow-none hover:shadow-none transition-all duration-300 border-0">
-                      {/* Icon */}
                       <div className="w-12 h-12 bg-[#FF6B6B]/10 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <section.icon className="w-6 h-6 text-[#FF6B6B]" />
                       </div>
 
-                      {/* Title */}
                       <h3 className="text-left text-xl font-bold text-gray-900 mb-4 ">
                         {section.title}
                       </h3>
 
-                      {/* Description - Only show if not empty */}
                       {section.description && (
                         <p className="text-gray-600 text-sm leading-relaxed mb-6 text-left">
                           {section.description}
                         </p>
                       )}
 
-                      {/* Items List */}
                       <ul className="space-y-3">
                         {section.items.map((item, itemIndex) => (
                           <li
@@ -142,7 +134,6 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
                 ))}
               </div>
 
-              {/* Desktop grid */}
               <div className="hidden lg:contents">
                 {data.map((section, index) => (
                   <motion.div
@@ -153,24 +144,20 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
                     viewport={{ once: true }}
                   >
                     <Card className="p-8 h-full bg-transparent rounded-2xl shadow-none hover:shadow-none transition-all duration-300 border-0">
-                      {/* Icon */}
                       <div className="w-12 h-12 bg-[#FF6B6B]/10 rounded-full flex items-center justify-center mb-6 mx-auto">
                         <section.icon className="w-6 h-6 text-[#FF6B6B]" />
                       </div>
 
-                      {/* Title */}
                       <h3 className="text-xl font-bold text-gray-900 mb-4 text-left">
                         {section.title}
                       </h3>
 
-                      {/* Description - Only show if not empty */}
                       {section.description && (
                         <p className="text-gray-600 text-sm leading-relaxed mb-6 text-left">
                           {section.description}
                         </p>
                       )}
 
-                      {/* Items List */}
                       <ul className="space-y-3">
                         {section.items.map((item, itemIndex) => (
                           <li
@@ -191,7 +178,9 @@ export function UnifiedSection({ type }: UnifiedSectionProps) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <WorkingPrinciples />
     </section>
   );
 }

@@ -10,10 +10,10 @@ const workingPrinciples = [
     iconColor: "text-red-500",
     bgColor: "bg-red-50",
     points: [
-      "I don&apos;t jump straight into code; I first dig into why the problem exists.",
-      'Once I know the "why," I research patterns, past solutions, and blind spots.',
-      "I design systems that solve today&apos;s problem while scaling for tomorrow.",
-      "Then I code — shipping in milestones, testing assumptions, and refining quickly.",
+      "I don’t jump straight into code; I first focus on understanding why the problem exists.",
+      'Once I know the "why," I research patterns, review past solutions, and identify blind spots.',
+      "I design systems that not only solve today’s problems but also scale for tomorrow.",
+      "Then I move to coding, delivering in milestones, testing assumptions, and refining quickly.",
     ],
   },
   {
@@ -22,10 +22,10 @@ const workingPrinciples = [
     iconColor: "text-orange-500",
     bgColor: "bg-orange-50",
     points: [
-      "I&apos;ve collaborated with teammates across countries and time zones, learning clarity and patience.",
-      'Often the "translator" between design and dev, I align creativity with technical reality.',
-      "I value feedback loops — reviews, brainstorms, retros — to sharpen the product.",
-      "For me, Agile isn&apos;t a checklist; stand-ups and planning keep momentum alive.",
+      "I’ve collaborated with teammates across countries and time zones, learning clarity and patience.",
+      'I often act as the "translator" between design and development, aligning creativity with reality.',
+      "I value feedback loops through reviews, brainstorms, and retrospectives to sharpen products.",
+      "For me, Agile is not a checklist; stand-ups and planning keep momentum alive.",
     ],
   },
   {
@@ -34,10 +34,10 @@ const workingPrinciples = [
     iconColor: "text-red-500",
     bgColor: "bg-red-50",
     points: [
-      "To me, leadership is ownership — stepping in and owning outcomes.",
+      "To me, leadership is ownership, stepping in and owning outcomes.",
       "I led the frontend team at my last company, mentoring juniors and reviewing code.",
       "I took an iOS app from planning to App Store launch, guiding the team through crunch time.",
-      "A proud win: helped a million-dollar client save $11K in just 3 days by re-engineering cloud costs.",
+      "A proud win: helped a million-dollar client save $11K in 3 days by re-engineering cloud costs.",
     ],
   },
 ];
@@ -54,6 +54,9 @@ export function WorkingPrinciples() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
+          <div className="inline-block px-4 py-2 bg-primary/10 text-center text-[#FF6B6B] text-lg font-bold rounded-full mb-6">
+            ABOUT ME
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-amber-800 mb-4">
             Here&apos;s how I can help bring your ideas to{" "}
             <span className="text-[#CC5500]">life</span>.
@@ -73,7 +76,7 @@ export function WorkingPrinciples() {
                 delay: index * 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-start text-left"
             >
               {/* Icon */}
               <motion.div

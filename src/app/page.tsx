@@ -2,7 +2,6 @@
 
 import { Navigation } from "@/components/navigation";
 import { FormspreeContactForm } from "@/components/ui/formspree-contact";
-import { ModernAboutSection } from "@/components/ui/modern-about";
 import { ModernHero } from "@/components/ui/modern-hero";
 import { ModernSkillsSection } from "@/components/ui/modern-skills";
 import { Preloader } from "@/components/ui/preloader";
@@ -46,9 +45,9 @@ export default function HomePage() {
       </div>
 
       {/* About/Services Section */}
-      <div className="snap-start">
+      {/* <div className="snap-start">
         <ModernAboutSection />
-      </div>
+      </div> */}
 
       {/* Featured Work Section */}
       <WorkShowcase />
