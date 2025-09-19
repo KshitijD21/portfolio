@@ -74,6 +74,7 @@ export function ModernProjectsSection() {
             >
               <div className="h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative mb-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
                     alt={project.title}

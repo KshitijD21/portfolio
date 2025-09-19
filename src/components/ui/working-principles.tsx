@@ -57,9 +57,8 @@ export function WorkingPrinciples() {
           <div className="inline-block px-4 py-2 bg-primary/10 text-center text-[#FF6B6B] text-lg font-bold rounded-full mb-6">
             ABOUT ME
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-amber-800 mb-4">
-            Here&apos;s how I can help bring your ideas to{" "}
-            <span className="text-[#CC5500]">life</span>.
+          <h2 className="text-2xl md:text-4xl lg:text-3xl font-bold text-amber-800 mb-4">
+            Here's a glimpse into how I approach problems, people and projects
           </h2>
         </motion.div>
 
